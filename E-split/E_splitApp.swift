@@ -1,17 +1,27 @@
-//
-//  E_splitApp.swift
-//  E-split
-//
-//  Created by Shubham Chiplunkar on 04/10/26.
-//
-
+import SwiftData
 import SwiftUI
 
 @main
 struct E_splitApp: App {
+    private let container: ModelContainer
+    private let dependencies: AppDependencies
+
+    init() {
+        let modelContainer: ModelContainer
+        do {
+            modelContainer = try SplitExpenseSchema.makeContainer()
+        } catch {
+            fatalError("Unable to create the local data store.")
+        }
+        container = modelContainer
+        dependencies = .live(container: modelContainer)
+    }
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
+                .environment(\.dependencies, dependencies)
+                .appTinted()
         }
     }
 }

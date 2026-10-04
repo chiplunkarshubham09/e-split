@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>shubhamchiplunkar.E-split.invite</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>esplit</string>
+			</array>
+		</dict>
+	</array>
+	<key>SUPABASE_URL</key>
+	<string>https://tefeierlgutcwpocfbmd.supabase.co</string>
+	<key>SUPABASE_ANON_KEY</key>
+	<string>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRlZmVpZXJsZ3V0Y3dwb2NmYm1kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTExMjY1NTgsImV4cCI6MjEwNjcwMjU1OH0.JA03pcu71vAM3_ZPYssWa8gEKgYm3Uaz4JN8tJm_hYA</string>
+</dict>
+</plist>

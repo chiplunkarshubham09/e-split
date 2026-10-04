@@ -1,0 +1,965 @@
+---
+description: Project rules for the Split Expense iOS app built with SwiftUI, MVVM and SwiftData
+alwaysApply: true
+---
+
+# Split Expense App — Project Rules
+
+## 1. Project Overview
+
+Build a modern iOS Split Expense application using **SwiftUI**.
+
+The app allows users to:
+
+- Create expense groups
+- Add members
+- Add and split expenses
+- Track who paid
+- Calculate who owes whom
+- View balances
+- Record basic settlements
+- View expense history
+- View spending analytics
+- Receive local notifications
+- Persist data locally
+
+The first version should focus on a **clean, reliable MVP**.
+
+Do NOT implement payment gateways, UPI, bank transfers, or advanced transaction processing.
+
+---
+
+# 2. Technology Stack
+
+Use:
+
+- Swift
+- SwiftUI
+- MVVM
+- SwiftData
+- Swift Charts
+- async/await
+- UserNotifications
+- NavigationStack
+
+Prefer Apple's native frameworks.
+
+Avoid third-party dependencies unless there is a strong technical reason.
+
+---
+
+# 3. Architecture
+
+Follow:
+
+```text
+Views
+   ↓
+ViewModels
+   ↓
+Repositories
+   ↓
+Data Sources
+   ├── LocalDataSource
+   └── RemoteDataSource (future)
+
+Use MVVM consistently.
+
+Views
+
+Views should:
+
+Focus on UI
+Handle user interaction
+Display ViewModel state
+Avoid business logic
+Avoid complex calculations
+Avoid direct database operations
+ViewModels
+
+ViewModels should:
+
+Manage screen state
+Validate input
+Call repositories
+Prepare data for Views
+Handle UI-related business logic
+Repositories
+
+Repositories should:
+
+Abstract persistence
+Provide CRUD operations
+Keep ViewModels independent from SwiftData
+Make future backend integration possible
+Business Logic
+
+Expense and balance calculations should be implemented in dedicated services rather than inside SwiftUI Views.
+
+4. Suggested Project Structure
+SplitExpense/
+│
+├── App/
+│   └── SplitExpenseApp.swift
+│
+├── Core/
+│   ├── Extensions/
+│   ├── Utilities/
+│   ├── Constants/
+│   ├── Errors/
+│   └── Services/
+│       ├── ExpenseCalculationService.swift
+│       ├── BalanceService.swift
+│       └── NotificationService.swift
+│
+├── Models/
+│   ├── User.swift
+│   ├── Group.swift
+│   ├── GroupMember.swift
+│   ├── Expense.swift
+│   ├── ExpenseSplit.swift
+│   └── Settlement.swift
+│
+├── Repositories/
+│   ├── GroupRepository.swift
+│   ├── ExpenseRepository.swift
+│   └── SettlementRepository.swift
+│
+├── Features/
+│   ├── Groups/
+│   │   ├── Views/
+│   │   └── ViewModels/
+│   │
+│   ├── Expenses/
+│   │   ├── Views/
+│   │   └── ViewModels/
+│   │
+│   ├── Balances/
+│   │   ├── Views/
+│   │   └── ViewModels/
+│   │
+│   ├── Settlements/
+│   │   ├── Views/
+│   │   └── ViewModels/
+│   │
+│   └── Analytics/
+│       ├── Views/
+│       └── ViewModels/
+│
+└── Persistence/
+    ├── ModelContainer.swift
+    └── LocalDataSource/
+
+Keep files small and focused.
+
+Avoid massive ViewModels, Views, services, or utility files.
+
+5. Main User Flow
+
+The primary flow should be:
+
+Create Group
+      ↓
+Add Members
+      ↓
+Group Dashboard
+      ↓
+Add Expense
+      ↓
+Choose Who Paid
+      ↓
+Choose Split Method
+      ↓
+Save Expense
+      ↓
+Calculate Balances
+      ↓
+View Who Owes Whom
+      ↓
+Record Settlement
+      ↓
+Mark Settlement as Paid
+
+Keep this flow simple and intuitive.
+
+6. Group Creation
+
+A Group should contain:
+
+id
+name
+description
+currency
+createdBy
+createdAt
+members
+
+When creating a group:
+
+Create the group.
+Automatically add the current user.
+Make the creator an Admin.
+Allow members to be added.
+Navigate to the Group Dashboard.
+
+Group types:
+
+Trip
+Home
+Friends
+Couple
+Office
+Custom
+
+The group type should be optional.
+
+7. Member Management
+
+Each member should contain:
+
+userId
+groupId
+name
+email
+profileImage
+role
+joinedAt
+
+MVP roles:
+
+Admin
+Member
+
+Admin:
+
+Edit group
+Add members
+Remove members
+Delete/archive group
+
+Member:
+
+View expenses
+Add expenses
+View balances
+Record settlements
+
+Do not implement complex permissions in the MVP.
+
+8. Group Dashboard
+
+The Group Dashboard should show:
+
+Group name
+Total expenses
+Amount current user owes
+Amount owed to current user
+Recent expenses
+Members
+Current balances
+Add Expense button
+
+Example:
+
+Goa Trip
+
+Total Expenses
+₹24,500
+
+You Owe
+₹1,500
+
+You Are Owed
+₹3,250
+
+Recent Expenses
+
+Hotel              ₹12,000
+Dinner              ₹3,200
+Taxi                ₹1,500
+Activities          ₹7,800
+
+                    + Add Expense
+
+Use clean cards and subtle animations.
+
+9. Expense Model
+
+An Expense should contain:
+
+id
+groupId
+title
+amount
+category
+paidBy
+createdBy
+createdAt
+notes
+splits
+
+Future fields may include:
+
+receiptImage
+location
+
+Do not implement receipt scanning or OCR in the MVP.
+
+10. Expense Categories
+
+Default categories:
+
+Food
+Hotel
+Transport
+Entertainment
+Shopping
+Medical
+Rent
+Utilities
+Travel
+Other
+
+Design the architecture so custom categories can be added later.
+
+11. Add Expense
+
+The Add Expense screen should allow:
+
+Amount
+Description
+Category
+Paid By
+Split Between
+Split Method
+Notes
+
+The user must choose:
+
+Who paid
+Which members participate
+How the expense is split
+
+Validation:
+
+Amount must be greater than zero
+Description should not be empty
+At least one participant must be selected
+Split amounts must equal total expense
+Percentages must total 100%
+Shares must be valid
+12. Split Methods
+
+Support four split methods.
+
+Equal Split
+₹4,000 / 4 members
+
+Shub     ₹1,000
+Rahul    ₹1,000
+Amit     ₹1,000
+Priya    ₹1,000
+Exact Amount
+Shub     ₹1,500
+Rahul    ₹1,000
+Amit       ₹500
+Priya    ₹1,000
+
+The total must equal the expense amount.
+
+Percentage
+Shub     40%
+Rahul    20%
+Amit     20%
+Priya    20%
+
+Percentages must equal 100%.
+
+Shares
+Shub     2 shares
+Rahul    1 share
+Amit     1 share
+Priya    2 shares
+
+Calculate each participant's amount based on their share.
+
+Use an enum:
+
+enum SplitMethod {
+    case equal
+    case exactAmount
+    case percentage
+    case shares
+}
+
+Do not use raw strings throughout the application.
+
+13. Expense Split Model
+
+Each ExpenseSplit should contain:
+
+id
+expenseId
+userId
+amount
+percentage
+shares
+
+Only the relevant values should be populated depending on the split method.
+
+14. Balance Calculation
+
+Balances must be calculated from expenses.
+
+Do NOT manually maintain permanent balance values.
+
+For every expense:
+
+payer balance += total expense
+
+participant balance -= participant share
+
+Example:
+
+Shub pays ₹4,000
+
+Shub     +₹4,000 - ₹1,000 = +₹3,000
+Rahul                    -₹1,000
+Amit                     -₹1,000
+Priya                    -₹1,000
+
+The total balance must always equal zero:
+
+₹3,000
+- ₹1,000
+- ₹1,000
+- ₹1,000
+= ₹0
+
+Use this zero-sum property as an important validation rule.
+
+15. Balance Screen
+
+Display balances in a human-friendly way.
+
+Example:
+
+Balances
+
+You
+
+You Owe
+₹1,500
+
+You Are Owed
+₹3,200
+
+----------------
+
+Rahul owes you ₹1,200
+
+Amit owes you ₹2,000
+
+You owe Priya ₹500
+
+Avoid exposing unnecessary accounting terminology.
+
+16. Settlement — Basic MVP
+
+Settlement functionality must remain very basic.
+
+The app is only tracking whether money has been settled.
+
+Do NOT implement:
+
+UPI
+Payment gateways
+Bank transfers
+Payment APIs
+Real-money transaction processing
+Payment verification
+Payment provider integrations
+
+Settlement model:
+
+id
+groupId
+fromUser
+toUser
+amount
+status
+createdAt
+settledAt
+
+Status:
+
+pending
+paid
+
+Example:
+
+Amit owes Shub ₹2,000
+
+[ Mark as Paid ]
+
+After marking it paid:
+
+Amit paid Shub ₹2,000
+
+Status: Paid
+
+The app does not actually transfer money.
+
+It only records the settlement status.
+
+17. Expense History
+
+Display expenses chronologically.
+
+Each expense should show:
+
+Category Icon
+Expense Title
+Amount
+Paid By
+Date
+
+Support:
+
+Search
+Category filter
+Member filter
+Date filter
+Amount filter
+
+Keep filters simple.
+
+18. Expense Detail
+
+Display:
+
+Dinner
+
+₹2,500
+
+Paid by:
+Shub
+
+Split:
+
+Shub       ₹625
+Rahul      ₹625
+Amit       ₹625
+Priya      ₹625
+
+Category:
+Food
+
+Date:
+October 4, 2026
+
+Allow authorized users to:
+
+Edit expense
+Delete expense
+
+Whenever an expense changes, balances must be recalculated.
+
+19. Analytics
+
+Use Swift Charts.
+
+Provide:
+
+Spending by Category
+Food
+Hotel
+Transport
+Entertainment
+Other
+Spending Over Time
+
+Support:
+
+Daily
+Weekly
+Monthly
+Member Contributions
+
+Show how much each member has paid.
+
+Analytics should be calculated from expenses.
+
+Do not unnecessarily store duplicate analytics data.
+
+20. Notifications
+
+Use UserNotifications.
+
+Possible notifications:
+
+Expense Added
+Expense Updated
+Settlement Reminder
+
+Keep notification logic inside:
+
+NotificationService
+
+Do not schedule notifications directly inside Views.
+
+21. Persistence
+
+Use SwiftData for the MVP.
+
+Persist:
+
+Groups
+Group Members
+Expenses
+Expense Splits
+Settlements
+
+Views must not directly perform database operations.
+
+Repositories should handle persistence.
+
+22. Offline First
+
+The MVP should work without a backend.
+
+The application should be usable completely offline.
+
+Design repositories so a remote backend can be added later.
+
+Future architecture:
+
+Repository
+   ├── LocalDataSource
+   └── RemoteDataSource
+
+Possible future backends:
+
+Firebase
+Supabase
+REST API
+
+Do not implement backend synchronization in the first MVP.
+
+23. Authentication
+
+Authentication is optional for the first MVP.
+
+Future options:
+
+Sign in with Apple
+Google
+Email/Password
+
+Do not tightly couple the application to a specific authentication provider.
+
+24. Group Invitations — Future
+
+For the MVP, members can be added manually.
+
+Future implementation:
+
+Create Group
+      ↓
+Generate Invite
+      ↓
+Share Link / QR
+      ↓
+User Opens Invite
+      ↓
+Join Group
+
+Do not implement deep links or QR joining until the core expense functionality is stable.
+
+25. UI/UX Guidelines
+
+Use a clean modern SwiftUI interface.
+
+Prioritize:
+
+Clear visual hierarchy
+Large readable amounts
+Consistent spacing
+Rounded cards
+SF Symbols
+Appropriate typography
+Subtle animations
+Empty states
+Loading states
+Error states
+Confirmation dialogs
+Accessibility
+Dark mode support
+
+Use NavigationStack.
+
+Avoid unnecessary navigation depth.
+
+Primary actions should always be obvious.
+
+26. Animations
+
+Use animations where they improve understanding.
+
+Good examples:
+
+Expense added
+Balance changes
+Chart appearance
+List insertion/deletion
+Settlement status changes
+
+Avoid excessive animation.
+
+Animations should never interfere with usability.
+
+27. Empty States
+
+Provide useful empty states.
+
+Example:
+
+No Expenses Yet
+
+Start tracking your group expenses.
+
+[ Add Expense ]
+
+Groups:
+
+No Groups Yet
+
+Create your first group to start splitting expenses.
+
+[ Create Group ]
+
+Settlements:
+
+No Settlements
+
+Everyone is currently settled.
+28. Error Handling
+
+Never silently ignore errors.
+
+Use friendly messages.
+
+Example:
+
+Unable to save expense.
+Please try again.
+Split amounts must equal ₹2,500.
+
+Do not expose raw SwiftData or system errors to users.
+
+Use typed errors where practical.
+
+29. Swift Coding Standards
+
+Follow modern Swift conventions.
+
+Prefer:
+
+struct for value types
+enum for finite states
+final class when reference semantics are required
+private wherever possible
+let instead of var when values do not change
+Small focused methods
+Strong typing
+Codable where appropriate
+async/await for asynchronous operations
+
+Avoid:
+
+Unnecessary force unwraps
+Massive ViewModels
+Massive Views
+Global mutable state
+Hardcoded strings
+Business logic inside View bodies
+30. SwiftUI State Management
+
+Use appropriate state management.
+
+Use:
+
+@State
+
+for local View state.
+
+Use:
+
+@Binding
+
+for values owned by a parent.
+
+Use the project's chosen Swift observation approach for ViewModels.
+
+Avoid global singleton state for normal application data.
+
+31. Dependency Injection
+
+Prefer dependency injection.
+
+Example:
+
+View
+   ↓
+ViewModel(repository: groupRepository)
+   ↓
+Repository
+
+This improves:
+
+Testability
+Maintainability
+Mocking
+Separation of concerns
+
+Avoid creating repositories directly inside every ViewModel when dependency injection is practical.
+
+32. Testing
+
+Prioritize unit tests for business logic.
+
+Expense Calculation Tests
+
+Test:
+
+Equal split
+Exact amount split
+Percentage split
+Shares split
+Rounding
+Invalid totals
+Balance Tests
+
+Test:
+
+Single expense
+Multiple expenses
+Multiple payers
+Multiple participants
+Settlements
+Zero-sum validation
+ViewModel Tests
+
+Test:
+
+Create group
+Add member
+Add expense
+Edit expense
+Delete expense
+Record settlement
+Mark settlement paid
+
+UI tests should eventually cover:
+
+Create Group
+    ↓
+Add Member
+    ↓
+Add Expense
+    ↓
+View Balance
+    ↓
+Mark Settlement Paid
+33. Development Phases
+Phase 1 — MVP
+
+Implement:
+
+Group creation
+Member management
+Expense creation
+Equal split
+Balance calculation
+Basic settlement
+Expense history
+SwiftData persistence
+
+Do not move to advanced features until this flow is stable.
+
+Phase 2 — Enhanced MVP
+
+Add:
+
+Exact split
+Percentage split
+Shares split
+Categories
+Search/filter
+Expense editing
+Charts
+Animations
+Local notifications
+Phase 3 — Collaborative App
+
+Add:
+
+Authentication
+Cloud backend
+Real-time synchronization
+Invite links
+QR invitations
+Push notifications
+Activity feed
+Phase 4 — Advanced Features
+
+Consider:
+
+Recurring expenses
+Expense attachments
+Receipt OCR
+Multi-currency
+PDF/CSV export
+Advanced analytics
+34. Critical Business Rules
+
+The application must always prioritize correct financial calculations over visual complexity.
+
+Every expense must satisfy:
+
+Total Expense
+=
+Sum of Participant Shares
+
+Every group's balances must satisfy:
+
+Sum of All Member Net Balances
+=
+0
+
+These rules must be validated whenever an expense is:
+
+Created
+Edited
+Deleted
+Recalculated
+
+Never allow invalid expense data to be persisted.
+
+35. Implementation Priority
+
+Always prioritize:
+
+1. Correctness
+2. Data integrity
+3. Simple UX
+4. Maintainable architecture
+5. Testability
+6. Performance
+7. Visual polish
+8. Advanced features
+
+Do not add complexity merely to demonstrate a technology.
+
+Build a reliable expense-splitting application first, then expand it incrementally.
+

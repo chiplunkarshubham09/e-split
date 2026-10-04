@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "37F763B1-839F-48ED-9D6A-D2A23561D5BE"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CF2DB93C-1AFA-457F-A3A1-65FE3588FF59"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "E-split/Repositories/AuthRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "register(name:email:password:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CF2DB93C-1AFA-457F-A3A1-65FE3588FF59 - f792483a5e0760c8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for E_split.AuthRepository.register(name: Swift.String, email: Swift.String, password: Swift.String) async throws -&gt; ()"
+                  moduleName = "E-split.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shubhamchiplunkar/Dev/E-split/E-split/Repositories/AuthRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58">
+               </Location>
+               <Location
+                  uuid = "CF2DB93C-1AFA-457F-A3A1-65FE3588FF59 - b32cb9831b1eee9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for E_split.AuthRepository.register(name: Swift.String, email: Swift.String, password: Swift.String) async throws -&gt; ()"
+                  moduleName = "E-split.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shubhamchiplunkar/Dev/E-split/E-split/Repositories/AuthRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58">
+               </Location>
+               <Location
+                  uuid = "CF2DB93C-1AFA-457F-A3A1-65FE3588FF59 - eacb1d47b1c17ecd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for E_split.AuthRepository.register(name: Swift.String, email: Swift.String, password: Swift.String) async throws -&gt; ()"
+                  moduleName = "E-split.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shubhamchiplunkar/Dev/E-split/E-split/Repositories/AuthRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6B16900C-CA95-4B0B-99C9-BFDDDDFD66EA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "E-split/Repositories/AuthRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "register(name:email:password:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EA2D4302-1101-41B0-9CE3-1DB9D28F5E17"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "E-split/Repositories/AuthRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "register(name:email:password:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9A4AE1BE-5BD4-47DF-A9A9-6502F1CF98E0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "E-split/Repositories/AuthRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "register(name:email:password:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "92A96E8D-04DD-46DF-BF73-D669F58D1A6E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "E-split/Persistence/Remote/SupabaseRemoteDataSource.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "register(name:email:password:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "92A96E8D-04DD-46DF-BF73-D669F58D1A6E - a4dea34c10d94d6c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for E_split.SupabaseRemoteDataSource.register(name: Swift.String, email: Swift.String, password: Swift.String) async throws -&gt; E_split.CurrentUser"
+                  moduleName = "E-split.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shubhamchiplunkar/Dev/E-split/E-split/Persistence/Remote/SupabaseRemoteDataSource.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29">
+               </Location>
+               <Location
+                  uuid = "92A96E8D-04DD-46DF-BF73-D669F58D1A6E - 2963e37c62577c2e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for E_split.SupabaseRemoteDataSource.register(name: Swift.String, email: Swift.String, password: Swift.String) async throws -&gt; E_split.CurrentUser"
+                  moduleName = "E-split.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shubhamchiplunkar/Dev/E-split/E-split/Persistence/Remote/SupabaseRemoteDataSource.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29">
+               </Location>
+               <Location
+                  uuid = "92A96E8D-04DD-46DF-BF73-D669F58D1A6E - 88a0cf2dd202a367"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(8) suspend resume partial function for E_split.SupabaseRemoteDataSource.register(name: Swift.String, email: Swift.String, password: Swift.String) async throws -&gt; E_split.CurrentUser"
+                  moduleName = "E-split.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shubhamchiplunkar/Dev/E-split/E-split/Persistence/Remote/SupabaseRemoteDataSource.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FAF3EA15-61D3-4EB5-88F0-64478F85074B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "E-split/Persistence/Remote/SupabaseRemoteDataSource.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "register(name:email:password:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FAF3EA15-61D3-4EB5-88F0-64478F85074B - 93ff389bf5a388a0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for E_split.SupabaseRemoteDataSource.register(name: Swift.String, email: Swift.String, password: Swift.String) async throws -&gt; E_split.CurrentUser"
+                  moduleName = "E-split.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shubhamchiplunkar/Dev/E-split/E-split/Persistence/Remote/SupabaseRemoteDataSource.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35">
+               </Location>
+               <Location
+                  uuid = "FAF3EA15-61D3-4EB5-88F0-64478F85074B - dee5418f0899b9e6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) await resume partial function for E_split.SupabaseRemoteDataSource.register(name: Swift.String, email: Swift.String, password: Swift.String) async throws -&gt; E_split.CurrentUser"
+                  moduleName = "E-split.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shubhamchiplunkar/Dev/E-split/E-split/Persistence/Remote/SupabaseRemoteDataSource.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35">
+               </Location>
+               <Location
+                  uuid = "FAF3EA15-61D3-4EB5-88F0-64478F85074B - c21fb6e95a04c4a2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for E_split.SupabaseRemoteDataSource.register(name: Swift.String, email: Swift.String, password: Swift.String) async throws -&gt; E_split.CurrentUser"
+                  moduleName = "E-split.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shubhamchiplunkar/Dev/E-split/E-split/Persistence/Remote/SupabaseRemoteDataSource.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35">
+               </Location>
+               <Location
+                  uuid = "FAF3EA15-61D3-4EB5-88F0-64478F85074B - 60508a02e5b65cae"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(9) suspend resume partial function for E_split.SupabaseRemoteDataSource.register(name: Swift.String, email: Swift.String, password: Swift.String) async throws -&gt; E_split.CurrentUser"
+                  moduleName = "E-split.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shubhamchiplunkar/Dev/E-split/E-split/Persistence/Remote/SupabaseRemoteDataSource.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "49612802-8932-4F92-854C-F70A5DEAA9AB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "E-split/Persistence/Remote/SupabaseRemoteDataSource.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "register(name:email:password:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "49612802-8932-4F92-854C-F70A5DEAA9AB - 93ff389bf5a38862"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for E_split.SupabaseRemoteDataSource.register(name: Swift.String, email: Swift.String, password: Swift.String) async throws -&gt; E_split.CurrentUser"
+                  moduleName = "E-split.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shubhamchiplunkar/Dev/E-split/E-split/Persistence/Remote/SupabaseRemoteDataSource.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37">
+               </Location>
+               <Location
+                  uuid = "49612802-8932-4F92-854C-F70A5DEAA9AB - c466201e2ec2f522"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) await resume partial function for E_split.SupabaseRemoteDataSource.register(name: Swift.String, email: Swift.String, password: Swift.String) async throws -&gt; E_split.CurrentUser"
+                  moduleName = "E-split.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shubhamchiplunkar/Dev/E-split/E-split/Persistence/Remote/SupabaseRemoteDataSource.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37">
+               </Location>
+               <Location
+                  uuid = "49612802-8932-4F92-854C-F70A5DEAA9AB - 31300c3700ed006e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for E_split.SupabaseRemoteDataSource.register(name: Swift.String, email: Swift.String, password: Swift.String) async throws -&gt; E_split.CurrentUser"
+                  moduleName = "E-split.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shubhamchiplunkar/Dev/E-split/E-split/Persistence/Remote/SupabaseRemoteDataSource.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37">
+               </Location>
+               <Location
+                  uuid = "49612802-8932-4F92-854C-F70A5DEAA9AB - d31e5f2e55cc393e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(10) suspend resume partial function for E_split.SupabaseRemoteDataSource.register(name: Swift.String, email: Swift.String, password: Swift.String) async throws -&gt; E_split.CurrentUser"
+                  moduleName = "E-split.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shubhamchiplunkar/Dev/E-split/E-split/Persistence/Remote/SupabaseRemoteDataSource.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

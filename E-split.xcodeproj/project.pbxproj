@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		3654176C3072C2B2008C34B8 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 365413D130724B3B008C34B8 /* Supabase */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		3654139E30724B3B008C34B8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -29,9 +33,22 @@
 		365413A730724B3B008C34B8 /* E-splitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "E-splitUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		365413C030724B3B008C34B8 /* Exceptions for "E-split" folder in "E-split" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 3654138F30724B38008C34B8 /* E-split */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		3654139230724B38008C34B8 /* E-split */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				365413C030724B3B008C34B8 /* Exceptions for "E-split" folder in "E-split" target */,
+			);
 			path = "E-split";
 			sourceTree = "<group>";
 		};
@@ -52,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3654176C3072C2B2008C34B8 /* Supabase in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +130,7 @@
 			);
 			name = "E-split";
 			packageProductDependencies = (
+				365413D130724B3B008C34B8 /* Supabase */,
 			);
 			productName = "E-split";
 			productReference = 3654139030724B38008C34B8 /* E-split.app */;
@@ -195,6 +214,9 @@
 			);
 			mainGroup = 3654138730724B38008C34B8;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				365413D030724B3B008C34B8 /* XCRemoteSwiftPackageReference "supabase-swift" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 3654139130724B38008C34B8 /* Products */;
 			projectDirPath = "";
@@ -397,6 +419,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "E-split/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Split Expense";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -428,6 +452,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "E-split/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Split Expense";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -570,6 +596,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		365413D030724B3B008C34B8 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.31.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		365413D130724B3B008C34B8 /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 365413D030724B3B008C34B8 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3654138830724B38008C34B8 /* Project object */;
 }
